@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 const app=express();
 dotenv.config()
 app.use(bodyParser.json())
+app.use(cors())
 app.use("/api/v1",router)
 const database=process.env.DATABASE_URL
 const port=process.env.PORT
