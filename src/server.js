@@ -12,7 +12,6 @@ app.use("/api/v1",router)
 const database=process.env.DATABASE_URL
 const port=process.env.PORT
 
-//configure port
 
 app.listen(port,()=>{
     console.log(`Port running on ${port}`)

@@ -26,8 +26,8 @@ class DataChequer{
                 const email=req.body.email;
                 const user=await User.findOne({email})
                 if(user){
-                    console.log(user)
-// return errorResponse(res,401,`email already exist`)
+                    // console.log(user)
+return errorResponse(res,401,`email already exist`)
          
                 }else{
                     return next()

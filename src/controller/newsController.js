@@ -10,24 +10,24 @@ class NewsController {
     static async createNews(req, res) {
       const news = await News.create(req.body);
       
-      try {
+       try {
         if (!news) {
-          return errorResponse(res, 401, `News not created`);
+         return errorResponse(res, 401, `News not created`);
         } else {
-          const users=await User.find();
+           const users=await User.find();
           users.map((User)=>{
-            sendEmail(User,news)
+             sendEmail(User,news)
 
-          })
+           })
           return successResponse(res, 201, `News successfuly Posted`, news);
         }
       } catch (error) {
-        return errorResponse(res, 404, error);
-      }
-    }
+         return errorResponse(res, 404, error);
+       }
+     }
   
    
-    static async getAllNews(req, res) {
+     static async getAllNews(req, res) {
       const news = await News.find();
       try {
         if (!news) {
@@ -36,10 +36,9 @@ class NewsController {
           return successResponse(res, 200, `News ${news.length} found`, news);
         }
       } catch (error) {
-        return errorResponse(res, 404, error);
-      }
-    }
-  
+         return errorResponse(res, 404, error);
+ }
+}
   
     static async updateNews(req, res) {
       const { id } = req.params;
