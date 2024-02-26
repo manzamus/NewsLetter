@@ -13,7 +13,6 @@ router.post(
     UserController.createUser  
 );
 
-router.post("/",DataChequer.userRegisterIsEmpty,UserController.createUser)
 router.get("/",verifyAccess("admin"),UserController.getAllUsers)
 router.delete("/", verifyAccess,UserController.deleteAllUsers)
 router.get('/:id',UserController.getOneUser)

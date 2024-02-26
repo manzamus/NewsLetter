@@ -17,7 +17,7 @@ class Validator{
     }
     static userAccountRule(){
         return [
-            check("firstName","Please write your firstName correctly").trim().isAlpha(),
+            check("firstName","Please write your firstName").trim().isAlpha(),
             check("email","PLease write your email correctly").trim().isEmail(),
             check("password","Provide strong password").trim().isStrongPassword()
         ]
